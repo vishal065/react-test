@@ -25,7 +25,7 @@ function App() {
     console.log(signup);
     try {
       const resp = await axios.post(
-        "http://localhost:3000/api/v1/user/signup",
+        "https://test-backend-wcw7.onrender.com/api/v1/user/signup",
         signup,
         { withCredentials: true }
       );
