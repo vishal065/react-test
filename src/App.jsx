@@ -7,18 +7,12 @@ function App() {
     email: "",
     password: "",
   });
-  const [data2, setData2] = useState({
-    firstName: "",
-    lastName: "",
-    gender: "",
-    DOB: "",
-    maritalStatus: "",
-  });
+  const [signup, setsignup] = useState({ email: "", phone: "", password: "" });
   async function submit() {
     console.log(data);
     try {
       const resp = await axios.post(
-        "https://cmpb-backend.onrender.com/api/v1/user/login",
+        "https://test-backend-wcw7.onrender.com/api/v1/user/login",
         data,
         { withCredentials: true }
       );
@@ -28,11 +22,11 @@ function App() {
     }
   }
   async function submit2() {
-    console.log(data2);
+    console.log(signup);
     try {
       const resp = await axios.post(
-        "http://localhost:4000/api/v1/profile/basic-details/create",
-        data2,
+        "http://localhost:3000/api/v1/user/signup",
+        signup,
         { withCredentials: true }
       );
       console.log(resp);
@@ -43,6 +37,7 @@ function App() {
   return (
     <div>
       <div className="div1">
+        <h1>login </h1>
         <label htmlFor="">email</label>
         <input
           type="text"
@@ -59,36 +54,27 @@ function App() {
           submit
         </button>
       </div>
+      {/* // */}
       <div className="div2">
-        <label htmlFor="">firstName</label>
+        <h1>sign up</h1>
+        <label htmlFor="">email</label>
         <input
           type="text"
-          placeholder="firstName"
-          onChange={(e) => setData2({ ...data, firstName: e.target.value })}
+          placeholder="email"
+          onChange={(e) => setsignup({ ...signup, email: e.target.value })}
         />
-        <label htmlFor="">lastName</label>
+        <label htmlFor="">phone</label>
         <input
           type="text"
-          placeholder="lastName"
-          onChange={(e) => setData({ ...data, lastName: e.target.value })}
+          placeholder="phone"
+          onChange={(e) => setsignup({ ...signup, phone: e.target.value })}
         />
-        <label htmlFor="">gender</label>
+
+        <label htmlFor="">password</label>
         <input
-          type="text"
-          placeholder="gender"
-          onChange={(e) => setData({ ...data, gender: e.target.value })}
-        />
-        <label htmlFor="">DOB</label>
-        <input
-          type="text"
-          placeholder="DOB"
-          onChange={(e) => setData({ ...data, DOB: e.target.value })}
-        />
-        <label htmlFor="">maritalStatus</label>
-        <input
-          type="text"
-          placeholder="maritalStatus"
-          onChange={(e) => setData({ ...data, maritalStatus: e.target.value })}
+          type="password"
+          placeholder="password"
+          onChange={(e) => setsignup({ ...signup, password: e.target.value })}
         />
         <button onClick={submit2} type="submit">
           submit
