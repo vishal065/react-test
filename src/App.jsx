@@ -12,7 +12,7 @@ function App() {
     console.log(data);
     try {
       const resp = await axios.post(
-        "https://test-backend-wcw7.onrender.com/api/v1/user/login",
+        "https://test-backend-xusu.onrender.com/api/v1/user/login",
         data
       );
       console.log(resp);
@@ -24,7 +24,7 @@ function App() {
     console.log(signup);
     try {
       const resp = await axios.post(
-        "https://test-backend-wcw7.onrender.com/api/v1/user/signup",
+        "https://test-backend-xusu.onrender.com/api/v1/user/signup",
         signup
       );
       console.log(resp);
