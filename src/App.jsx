@@ -13,8 +13,7 @@ function App() {
     try {
       const resp = await axios.post(
         "https://test-backend-wcw7.onrender.com/api/v1/user/login",
-        data,
-        { withCredentials: true }
+        data
       );
       console.log(resp);
     } catch (error) {
@@ -26,8 +25,7 @@ function App() {
     try {
       const resp = await axios.post(
         "https://test-backend-wcw7.onrender.com/api/v1/user/signup",
-        signup,
-        { withCredentials: true }
+        signup
       );
       console.log(resp);
     } catch (error) {
