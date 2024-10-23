@@ -13,7 +13,8 @@ function App() {
     try {
       const resp = await axios.post(
         "https://test-backend-nh9c.onrender.com/api/v1/user/login",
-        data
+        data,
+        { withCredentials: true }
       );
       console.log(resp);
     } catch (error) {
@@ -25,7 +26,8 @@ function App() {
     try {
       const resp = await axios.post(
         "https://test-backend-nh9c.onrender.com/api/v1/user/signup",
-        signup
+        signup,
+        { withCredentials: true }
       );
       console.log(resp);
     } catch (error) {
